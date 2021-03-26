@@ -8,6 +8,3 @@ main_test:
 
 runTest:
 	./main_test 
-
-runMain:
-	./main 

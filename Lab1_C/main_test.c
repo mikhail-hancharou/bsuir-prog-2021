@@ -1,5 +1,5 @@
 #include <assert.h>
-#include <conio.h>
+/*#include <conio.h>*/
 #include "main.h"
 
 int test_coup() 

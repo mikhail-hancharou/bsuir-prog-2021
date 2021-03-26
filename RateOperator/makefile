@@ -1,5 +1,4 @@
-all: main main_test runTest runMain
-
+all: main main_test runTest
 main:
 	gcc -std=c89 main.c src.c -o main
 

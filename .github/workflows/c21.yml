@@ -17,6 +17,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: built and test
+    - name: test and compile
       working-directory: ./RateOperator
       run: make  all

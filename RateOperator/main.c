@@ -1,7 +1,6 @@
 ﻿#include <stdio.h>
 #include "src.h"
 
-
 int main()
 {
     int gb, inNetworkMin, otherOperatorMin, smsAmount, wants = 0;

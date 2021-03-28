@@ -19,7 +19,7 @@ int Calculate(double x, double epsilon)
 {
     double sinx = sin(x);
     int n = 1;
-    int fact = 2;
+    double fact = 2;
     double denominator = 1;
     double numerator = x;
     double finalResult = x;

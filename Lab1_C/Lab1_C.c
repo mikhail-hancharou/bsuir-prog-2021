@@ -9,7 +9,7 @@ int get_input()
     while (scanf("%d%c", &x, &ch) != 2 || ch != '\n' || x < 1000 || x > 9999)
     {
         printf("digit must be more then 999 and less then 10000\nTry again\n");
-        while (getchar() != '\n') {}
+        while (getchar() != '\n') {};
     }
     return x;
 }

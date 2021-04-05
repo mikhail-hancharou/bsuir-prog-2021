@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 int getInput()
 {
@@ -13,11 +14,13 @@ int getInput()
 	return digit;
 }
 
-void makeSnake(int* A[], int N, int M)
+void makeSnake(int** A, int N, int M)
 {
+    
     int digit = 1;
     int helpOneI = 0;
     int helpOneJ = 0;
+    int i, j;
     while (digit > 0)
     {
         while (helpOneJ < M)
@@ -26,8 +29,10 @@ void makeSnake(int* A[], int N, int M)
             {
                 helpOneI++;
             }
+            assert(helpOneI < N);
+            assert(helpOneJ < M);
             A[helpOneI][helpOneJ] = digit++;
-            if (helpOneJ + 1 < M && A[helpOneI][helpOneJ + 1] > 0)
+            if (helpOneJ + 1 < M && A[helpOneI][helpOneJ + 1] > 0 && A[helpOneI][helpOneJ + 1] < 10000)
             {
                 helpOneI++;
                 break;
@@ -48,8 +53,10 @@ void makeSnake(int* A[], int N, int M)
             {
                 helpOneJ--;
             }
+            assert(helpOneI < N);
+            assert(helpOneJ < M);
             A[helpOneI][helpOneJ] = digit++;
-            if (helpOneI + 1 < N && A[helpOneI + 1][helpOneJ] > 0)
+            if (helpOneI + 1 < N && A[helpOneI + 1][helpOneJ] > 0 && A[helpOneI + 1][helpOneJ] < 10000)
             {
                 helpOneJ--;
                 break;
@@ -70,8 +77,10 @@ void makeSnake(int* A[], int N, int M)
             {
                 helpOneI--;
             }
+            assert(helpOneI < N);
+            assert(helpOneJ < M);
             A[helpOneI][helpOneJ] = digit++;
-            if (helpOneJ - 1 >= 0 && A[helpOneI][helpOneJ - 1] > 0)
+            if (helpOneJ - 1 >= 0 && A[helpOneI][helpOneJ - 1] > 0 && A[helpOneI][helpOneJ - 1] < 10000)
             {
                 helpOneI--;
                 break;
@@ -92,8 +101,10 @@ void makeSnake(int* A[], int N, int M)
             {
                 helpOneJ++;
             }
+            assert(helpOneI < N);
+            assert(helpOneJ < M);
             A[helpOneI][helpOneJ] = digit++;
-            if (helpOneI - 1 >= 0 && A[helpOneI - 1][helpOneJ] > 0)
+            if (helpOneI - 1 >= 0 && A[helpOneI - 1][helpOneJ] > 0 && A[helpOneI - 1][helpOneJ] < 10000)
             {
                 helpOneJ++;
                 break;
@@ -106,3 +117,29 @@ void makeSnake(int* A[], int N, int M)
         }
     }
 }
+
+int** set_array(int n, int m) 
+{
+    int** a;
+    if (!(a = (int**)malloc(n * sizeof(int*)))) 
+    {
+        free(a);
+        printf("Memory error");
+        exit(1);
+    }
+
+    int i;
+    for (i = 0; i < n; i++) {
+        if (!(a[i] = (int*)malloc(m * sizeof(int))))
+        {
+            for (i; i >= 0; i--)
+            {
+                free(a[i]);
+            }
+            printf("Memory error");
+            exit(1);
+        }
+    }
+    return a;
+}
+

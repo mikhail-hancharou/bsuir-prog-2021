@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "src.h"
-/*
+
 int main()
 {
     int N = getInput();
@@ -40,4 +40,4 @@ int main()
     }
     return 0;
 }
-*/
+

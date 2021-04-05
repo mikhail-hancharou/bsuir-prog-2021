@@ -7,7 +7,7 @@ int getInput()
 	int digit;
 	char ch;
 	while (scanf("%d%c", &digit, &ch) != 2 || ch != '\n' || digit < 1 || digit > 100) {
-		printf("Incorrect value, required integer from %d to %d, enter again: ", 0, 100);
+		printf("Inter digit more then %d and less then %d ", 0, 100);
 		while (getchar() != '\n');
 	}
 	return digit;

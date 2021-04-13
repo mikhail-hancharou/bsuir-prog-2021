@@ -15,4 +15,5 @@ int main()
     char ans[120];
     search4u(fp, word, ans);
     printf("%s\n", ans);
+    fclose(fp);
 }

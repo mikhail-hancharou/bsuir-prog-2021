@@ -7,6 +7,6 @@ main_test:
 	gcc -std=c89 -o main_test test.c src.c -lm
 
 runTest:
-	./main_test
+	./main_test 
 
 

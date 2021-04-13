@@ -1,10 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
+#include "src.h"
 
-void search4u(FILE* fp, char* word[], char *ans)
+void search4u(FILE* fp, char* word, char* ans)
 {
-    char str[10000];
+    static char str[10000];
     int result = 0;
     while (!feof(fp))
     {
@@ -19,7 +20,7 @@ void search4u(FILE* fp, char* word[], char *ans)
     int i = 0, j = 0;
     while (1 > 0)
     {
-        if (*word[lenght] == '\0')/*   *   */
+        if (word[lenght] == '\0')/*   *   */
         {
             break;
         }
@@ -33,9 +34,9 @@ void search4u(FILE* fp, char* word[], char *ans)
             char let;
             if (word[j] > word[j + 1])
             {
-                let = *word[j + 1];/*   *   */
-                *word[j + 1] = *word[j];
-                *word[j] = let;
+                let = word[j + 1];/*   *   */
+                word[j + 1] = word[j];
+                word[j] = let;
             }
         }
     }
@@ -85,7 +86,7 @@ void search4u(FILE* fp, char* word[], char *ans)
             int flag = 0;
             for (j = 0; j < lenght; j++)
             {
-                if (*word[j] != tmpWord[j])/*   *   */
+                if (word[j] != tmpWord[j])/*   *   */
                 {
                     flag = -1;
                     break;
@@ -115,7 +116,7 @@ void search4u(FILE* fp, char* word[], char *ans)
             }
             n = 0;
         }
-        else
+        else if (n != 0)
         {
             for (j = 0; j < n; j++)
             {
@@ -124,5 +125,8 @@ void search4u(FILE* fp, char* word[], char *ans)
             }
             n = 0;
         }
+        /*
+        ans[k - 1] = '\0';
+        */
     }
 }

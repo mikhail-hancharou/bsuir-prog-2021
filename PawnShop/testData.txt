@@ -1,0 +1,13 @@
+6
+Totemmy 1 money 3000 2000 12.20.20 1month 
+Vababay 2 plain 10000 7500 1.21.21 1month 
+Mikhail 3 computer 12300 11500 5.25.21 2month 
+Vababay 2 telephone 3400 3000 1.30.21 6month 
+Mikhail 3 cer 20000 17000 5.25.21 year 
+Vababay 2 hourse 7800 7000 1.30.21 month 
+5
+Totemmy 00000001HB00 1 12.20.20 #car/tomson/ 
+Vababay 00000002HB00 2 1.21.21 #mobile/tv/telephone/ 
+Mikhail 00000000HB00 3 5.25.21 #tv/computer/ 
+Nastya 00000003HB00 4 5.24.21 # 
+Michael 00000000HB01 5 ff  

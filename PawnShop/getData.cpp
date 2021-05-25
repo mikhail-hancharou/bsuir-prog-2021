@@ -5,6 +5,7 @@
 #include <fstream>
 
 using namespace std;
+
 dataList dList;
 clientList cList;
 

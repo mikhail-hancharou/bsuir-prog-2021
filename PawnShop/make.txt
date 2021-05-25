@@ -1,0 +1,13 @@
+all: main main_test runTest
+
+main:
+	g++ getData.cpp PawnShop.cpp -o main
+
+main_test:
+	g++ -ftest-coverage -fprofile-arcs -O0 -o main_test getData.cpp test.cpp
+
+runTest:
+	./main_test
+	gcov -abcfu getData.cpp
+
+ 

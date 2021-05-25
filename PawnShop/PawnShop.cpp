@@ -30,7 +30,7 @@ int PrintMenu()
         }
     }
 }
-/*
+
 int main()
 {
     getData("data.txt");
@@ -69,6 +69,3 @@ int main()
         }
     }
 }
-
-
-*/
